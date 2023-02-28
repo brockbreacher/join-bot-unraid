@@ -25,7 +25,7 @@ https://github.com/brockbreacher/Join-Bot</Overview>
   <Requires/>
   <Config Name="TOKEN" Target="TOKEN" Default="" Mode="" Description="The Discord Bot Token" Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="ACTIVITY" Target="ACTIVITY" Default="" Mode="" Description="Bot Activity Message (EX, You Sleep)" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="TYPE" Target="TYPE" Default="PLAYING" Mode="" Description="The actvity type (LISTENING, WATCHING, PLAYING)" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="TYPE" Target="TYPE" Default="PLAYING" Mode="" Description="The activity type (LISTENING, WATCHING, PLAYING)" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="DEVGUILDID" Target="DEVGUILDID" Default="" Mode="" Description="The guild ID of the dev server (EX, 514101346992128012)" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="PREFIX" Target="PREFIX" Default="jb!" Mode="" Description="The prefix of the bot (EX, JB!)" Type="Variable" Display="always" Required="true" Mask="false"/>
 </Container>
