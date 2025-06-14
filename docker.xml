@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>join-bot</Name>
   <Repository>ghcr.io/brockbreacher/join-bot</Repository>
-  <Registry/>
+  <Registry>https://github.com/brockbreacher/Join-Bot/pkgs/container/join-bot</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
