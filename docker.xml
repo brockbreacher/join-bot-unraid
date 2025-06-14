@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>join-bot</Name>
-  <Repository>brockbreacher/join-bot</Repository>
-  <Registry>https://github.com/brockbreacher/Join-Bot/pkgs/container/join-bot</Registry>
+  <Repository>ghcr.io/brockbreacher/join-bot</Repository>
+  <Registry/>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
