@@ -1,5 +1,7 @@
 # Unraid Cardboard Services Templates
 
+This repository contains Unraid template configurations for Cardboard Services' self-hosted applications.
+
 ## Available Templates
 
 ### Join-Bot
