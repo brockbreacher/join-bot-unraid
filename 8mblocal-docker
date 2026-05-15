@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>8mb-local</Name>
+  <Repository>jms1717/8mblocal</Repository>
+  <Registry>https://hub.docker.com/r/jms1717/8mblocal/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/jms1717/8mblocal/</Support>
+  <Project>https://8mb.campuscal.tech/</Project>
+  <Overview>a local self hosted webui version of 8mb.video&#13;
+https://github.com/JMS1717/8mb.local&#13;
+&#13;
+https://hub.docker.com/r/jms1717/8mblocal/&#13;
+&#13;
+GPU SUPPORT:&#13;
+Add&#13;
+--gpus all&#13;
+to Extra Parameters</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8001]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/brockbreacher/images-for-projects/blob/main/8mblocallogo.png</Icon>
+  <ExtraParams>  </ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1778887319</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Web UI Port" Target="8001" Default="8001" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+  <Config Name="Uploads Temp" Target="/uploads" Default="/mnt/user/appdata/8mb/uploads/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/8mb/uploads/</Config>
+  <Config Name="Outputs Temp" Target="/outputs" Default="/mnt/user/appdata/8mb/outputs/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/8mb/outputs/</Config>
+  <Config Name="AUTH_ENABLED" Target="AUTH_ENABLED" Default="FALSE" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">FALSE</Config>
+  <Config Name="AUTH_USER" Target="AUTH_USER" Default="admin" Mode="" Description="Username" Type="Variable" Display="advanced" Required="false" Mask="false">admin</Config>
+  <Config Name="AUTH_PASS" Target="AUTH_PASS" Default="" Mode="" Description="Password " Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="FILE_RETENTION_HOURS" Target="FILE_RETENTION_HOURS" Default="1" Mode="" Description="Hours before temp video files are wiped from storage." Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <TailscaleStateDir/>
+</Container>
