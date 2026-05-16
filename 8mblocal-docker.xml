@@ -21,7 +21,7 @@ to Extra Parameters</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:8001]</WebUI>
   <TemplateURL/>
-  <Icon>https://github.com/brockbreacher/images-for-projects/blob/main/8mblocallogo.png</Icon>
+  <Icon>https://github.com/brockbreacher/images-for-projects/blob/main/8mblocallogo.svg</Icon>
   <ExtraParams>  </ExtraParams>
   <PostArgs/>
   <CPUset/>
