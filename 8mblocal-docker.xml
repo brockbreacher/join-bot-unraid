@@ -17,21 +17,24 @@ https://hub.docker.com/r/jms1717/8mblocal/&#13;
 GPU SUPPORT:&#13;
 Add&#13;
 --gpus all&#13;
-to Extra Parameters</Overview>
+to Extra Parameters&#13;
+&#13;
+NVIDIA USERS: Also make sure you have the Nvidia driver plugin installed, then place "compute,video,utility" in the NVIDIA_DRIVER_CAPABILITIES option below</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:8001]</WebUI>
   <TemplateURL/>
   <Icon>https://github.com/brockbreacher/images-for-projects/blob/main/8mblocallogo.svg</Icon>
-  <ExtraParams>  </ExtraParams>
+  <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1778887319</DateInstalled>
+  <DateInstalled>1779143783</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
   <Config Name="Web UI Port" Target="8001" Default="8001" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
   <Config Name="Uploads Temp" Target="/uploads" Default="/mnt/user/appdata/8mb/uploads/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/8mb/uploads/</Config>
   <Config Name="Outputs Temp" Target="/outputs" Default="/mnt/user/appdata/8mb/outputs/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/8mb/outputs/</Config>
+  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="" Mode="" Description="Add " Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="AUTH_ENABLED" Target="AUTH_ENABLED" Default="FALSE" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">FALSE</Config>
   <Config Name="AUTH_USER" Target="AUTH_USER" Default="admin" Mode="" Description="Username" Type="Variable" Display="advanced" Required="false" Mask="false">admin</Config>
   <Config Name="AUTH_PASS" Target="AUTH_PASS" Default="" Mode="" Description="Password " Type="Variable" Display="advanced" Required="false" Mask="true"/>
