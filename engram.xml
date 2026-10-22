@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Engram</Name>
+  <Repository>ghcr.io/jsakkos/engram:latest</Repository>
+  <Registry>https://github.com/jsakkos/engram</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://discord.gg/G8fjjGswdc</Support>
+  <Project>https://github.com/jsakkos/engram</Project>
+  <ReadMe/>
+  <Overview>Engram is a modern disc ripping and media organization tool with a reactive web dashboard. Unlike headless automation tools, Engram provides full visibility into the ripping process with intelligent Human-in-the-Loop intervention for ambiguous content.
+
+SUPPORT:
+- Discord: https://discord.gg/G8fjjGswdc
+- GitHub Issues: https://github.com/jsakkos/engram/issues
+
+REQUIREMENTS:
+- A TMDB Read Access Token (set in the Engram web UI on first run)
+- Optical drive passthrough is REQUIRED. A native Linux host exposing /dev/sr* devices is needed. Use the Disc Drive (block) and Disc Drive (scsi) settings below; each variable's description shows the command to find the correct device paths.
+- A MakeMKV license key is OPTIONAL — the free monthly beta key from the MakeMKV forum works, and Engram runs fine without one (set via MAKEMKV_APP_KEY if you have one)
+
+GPU ACCELERATION (OPTIONAL):
+- Enabled by default via --gpus=all in Extra Parameters. Requires the Unraid Nvidia Driver plugin, which bundles the NVIDIA Container Toolkit — no separate install needed.
+- If you don't have an NVIDIA GPU or don't want GPU acceleration, remove --gpus=all from Extra Parameters.
+
+FIRST START:
+- Slow: compiles MakeMKV (a few minutes) and downloads a speech model (~465MB)
+- Set PUID/PGID to your user IDs to avoid root-owned files (run 'id -u' and 'id -g' in a terminal)</Overview>
+  <Category>Tools: MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Jsakkos/engram/main/logo.png</Icon>
+  <ExtraParams>--gpus=all</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Web UI Port" Target="8000" Default="8000" Mode="tcp" Description="Port to access the Engram web UI" Type="Port" Display="always" Required="true" Mask="false">8965</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID — run 'id -u' in a terminal to find yours (99 = nobody)" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID — run 'id -g' in a terminal to find yours (100 = users)" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/New_York" Mode="" Description="Container timezone (e.g., America/New_York, Europe/London, Etc/UTC)" Type="Variable" Display="always" Required="true" Mask="false">America/Chicago</Config>
+  <Config Name="MakeMKV License Key" Target="MAKEMKV_APP_KEY" Default="" Mode="" Description="Optional. MakeMKV license or free beta key from https://forum.makemkv.com/ (beta key updates monthly). Engram runs without this if left blank." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/engram/" Mode="rw" Description="Database, caches, compiled MakeMKV, and settings. BACK THIS UP! (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/engram/</Config>
+  <Config Name="Movies Library" Target="/media/movies" Default="/mnt/user/media/movies/" Mode="rw" Description="Organized movie output directory (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/movies/</Config>
+  <Config Name="TV Library" Target="/media/tv" Default="/mnt/user/media/tv/" Mode="rw" Description="Organized TV series output directory (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/tv/</Config>
+  <Config Name="Staging Path" Target="/staging" Default="/mnt/user/appdata/engram/staging/" Mode="rw" Description="Work area for in-progress rips and auto-import workflow (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/engram/staging/</Config>
+  <Config Name="Disc Drive (block)" Target="/dev/sr0" Default="" Mode="" Description="REQUIRED. Run 'lsscsi -g' and take the FIRST path for your disc drive (e.g., /dev/sr0)" Type="Device" Display="always" Required="true" Mask="false">/dev/sr0</Config>
+  <Config Name="Disc Drive (scsi)" Target="/dev/sg3" Default="" Mode="" Description="REQUIRED. Run 'lsscsi -g' and take the SECOND path for your disc drive (e.g., /dev/sg3). Must match the same physical drive as the block device." Type="Device" Display="always" Required="true" Mask="false">/dev/sg3</Config>
+  <Config Name="MakeMKV Version" Target="MAKEMKV_VERSION" Default="latest" Mode="" Description="Pin a specific version (e.g., 1.18.1) for reproducibility, or leave 'latest' for the newest." Type="Variable" Display="advanced" Required="false" Mask="false">latest</Config>
+  <TailscaleStateDir/>
+</Container>
