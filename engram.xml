@@ -20,7 +20,7 @@ SUPPORT:
 REQUIREMENTS:
 - A TMDB Read Access Token (set in the Engram web UI on first run)
 - Optical drive passthrough is REQUIRED. A native Linux host exposing /dev/sr* devices is needed. Use the Disc Drive (block) and Disc Drive (scsi) settings below; each variable's description shows the command to find the correct device paths.
-- A MakeMKV license key is OPTIONAL — the free monthly beta key from the MakeMKV forum works, and Engram runs fine without one (set via MAKEMKV_APP_KEY if you have one)
+- A MakeMKV license key is OPTIONAL — the free monthly beta key from the MakeMKV forums is grabbed automatically if one is not provided.
 
 GPU ACCELERATION (OPTIONAL):
 - Enabled by default via --gpus=all in Extra Parameters. Requires the Unraid Nvidia Driver plugin, which bundles the NVIDIA Container Toolkit — no separate install needed.
@@ -43,10 +43,10 @@ FIRST START:
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID — run 'id -u' in a terminal to find yours (99 = nobody)" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID — run 'id -g' in a terminal to find yours (100 = users)" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
   <Config Name="Timezone" Target="TZ" Default="America/New_York" Mode="" Description="Container timezone (e.g., America/New_York, Europe/London, Etc/UTC)" Type="Variable" Display="always" Required="true" Mask="false">America/Chicago</Config>
-  <Config Name="MakeMKV License Key" Target="MAKEMKV_APP_KEY" Default="" Mode="" Description="Optional. MakeMKV license or free beta key from https://forum.makemkv.com/ (beta key updates monthly). Engram runs without this if left blank." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/engram/" Mode="rw" Description="Database, caches, compiled MakeMKV, and settings. BACK THIS UP! (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/engram/</Config>
-  <Config Name="Movies Library" Target="/media/movies" Default="/mnt/user/media/movies/" Mode="rw" Description="Organized movie output directory (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/movies/</Config>
-  <Config Name="TV Library" Target="/media/tv" Default="/mnt/user/media/tv/" Mode="rw" Description="Organized TV series output directory (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/tv/</Config>
+  <Config Name="MakeMKV License Key" Target="MAKEMKV_APP_KEY" Default="" Mode="" Description="Optional. MakeMKV license or free beta key from https://forum.makemkv.com/ (beta key updates monthly). Engram grabs the current beta key automatically if left blank." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/engram/" Mode="rw" Description="Database, caches, compiled MakeMKV, and settings." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/engram/</Config>
+  <Config Name="Movies Library" Target="/media/movies" Default="/mnt/user/media/movies/" Mode="rw" Description="Organized movie output directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/movies/</Config>
+  <Config Name="TV Library" Target="/media/tv" Default="/mnt/user/media/tv/" Mode="rw" Description="Organized TV series output directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/media/tv/</Config>
   <Config Name="Staging Path" Target="/staging" Default="/mnt/user/appdata/engram/staging/" Mode="rw" Description="Work area for in-progress rips and auto-import workflow (example path)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/engram/staging/</Config>
   <Config Name="Disc Drive (block)" Target="/dev/sr0" Default="" Mode="" Description="REQUIRED. Run 'lsscsi -g' and take the FIRST path for your disc drive (e.g., /dev/sr0)" Type="Device" Display="always" Required="true" Mask="false">/dev/sr0</Config>
   <Config Name="Disc Drive (scsi)" Target="/dev/sg3" Default="" Mode="" Description="REQUIRED. Run 'lsscsi -g' and take the SECOND path for your disc drive (e.g., /dev/sg3). Must match the same physical drive as the block device." Type="Device" Display="always" Required="true" Mask="false">/dev/sg3</Config>
