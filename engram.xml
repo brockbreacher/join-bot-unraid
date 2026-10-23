@@ -32,7 +32,7 @@ FIRST START:
   <Category>Tools: MediaApp:Video</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/Jsakkos/engram/main/logo.png</Icon>
+  <Icon>https://github.com/brockbreacher/images-for-projects/blob/main/engram-logo.png</Icon>
   <ExtraParams>--gpus=all</ExtraParams>
   <PostArgs/>
   <CPUset/>
